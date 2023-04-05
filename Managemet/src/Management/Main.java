@@ -1,10 +1,12 @@
 package Management;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        ArrayList<Student> students = new ArrayList<>();
             do {
                 Scanner sc = new Scanner(System.in);
                 System.out.println("1.Add student records");
@@ -74,6 +76,10 @@ public class Main {
                         }
                         break;
                     case 3:
+                        for (Student student : students) {
+                            System.out.println(student.getStudentID() + "," + student.getStudentName() + "," + student.getAddress() + "," + student.getPhone());
+                        }
+
                         break;
                     case 4:
                         System.out.println("Exit Display");
